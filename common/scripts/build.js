@@ -65,13 +65,14 @@ async function main() {
       Key: key,
     }
     
-    console.log(`Looking for a published version for ${name}`);
+    console.log(`Looking for a published version for ${name}`, params);
 
     let publishedVersion = null;
 
     try {
-      console.log('TRYING');
+      console.log('TRYING', params);
       const data = await s3.getObject(params).promise();
+      console.log('data: ', data);
       if (data && data.Body) {
         publishedVersion = data.Body.toString().trim(); 
         console.log('found a VERSION on S3', publishedVersion);
