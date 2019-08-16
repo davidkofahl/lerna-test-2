@@ -123,7 +123,8 @@ async function main() {
     }
   });
 
-  process.exit(0);
+  console.log('EXITING');
+  // process.exit(0)
 };
 
 main();
