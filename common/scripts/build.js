@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const fs = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -53,6 +54,7 @@ async function main() {
 
 
   // @TODO handling multiple story builds, run serial or parallel?
+  // @TODO this isn't running in serial/waiting
   pkgs.forEach(async ({ name, location }) => {
     // get current tagged version
     const version = JSON.parse(fs.readFileSync(`${location}/package.json`)).version;
@@ -70,14 +72,12 @@ async function main() {
     let publishedVersion = null;
 
     try {
-      console.log('TRYING', params);
       const data = await s3.getObject(params).promise();
-      console.log('data: ', data);
+
       if (data && data.Body) {
         publishedVersion = data.Body.toString().trim(); 
         console.log('found a VERSION on S3', publishedVersion);
       }
-      console.log('no data: ', data);
     // Object probably doesn't exist yet
     } catch (err) {
       // only care about stories not yet published (missing from S3 bucket)
@@ -95,7 +95,6 @@ async function main() {
     if (publishedVersion && semver.gt(version, publishedVersion)) {
       console.log(`Need a new version for ${name}`);
       
-
       /* BUILD */
       try {
         await exec(`lerna run --scope ${name} build`);
