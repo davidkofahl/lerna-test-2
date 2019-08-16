@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header text='@@@App One@@' />
+        <Header text='@@@App One@@@' />
       </div>
     );
   }
