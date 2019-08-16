@@ -1,0 +1,6 @@
+{
+  "name": "@tny/components",
+  "main": "index.js",
+  "private": true,
+  "version": "8.0.0"
+}

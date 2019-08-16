@@ -1,0 +1,11 @@
+{
+  "command": {
+    "version": {
+      "allowBranch": "master"
+    }
+  },
+  "packages": [
+    "stories/*"
+  ],
+  "version": "independent"
+}

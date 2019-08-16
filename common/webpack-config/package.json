@@ -1,0 +1,6 @@
+{
+  "name": "@tny/webpack-config",
+  "main": "index.js",
+  "private": true,
+  "version": "10.0.0"
+}

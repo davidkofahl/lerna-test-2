@@ -1,0 +1,12 @@
+{
+  "name": "<story-name>",
+  "articleId": {
+    "<environment>": "<copilot-article-id>"
+  },
+  "scripts": {
+    "start": "<command>",
+    "build": "<command>",
+  },
+  "private": true,
+  "version": "<semantic-version>",
+}

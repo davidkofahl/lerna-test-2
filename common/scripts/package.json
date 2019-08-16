@@ -1,0 +1,9 @@
+{
+  "name": "@tny/scripts",
+  "private": true,
+  "devDependencies": {
+    "s3": "^4.4.0",
+    "semver": "^6.2.0"
+  },
+  "version": "22.0.0"
+}

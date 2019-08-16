@@ -1,0 +1,15 @@
+.DS_Store
+logs
+*.log
+npm-debug.log*
+lerna-debug.log*
+.babel-cache/
+package-lock.json
+node_modules/
+.npm
+.eslintcache
+.env
+builds
+public/*
+!public/.gitkeep 
+.docker/.jenkins/

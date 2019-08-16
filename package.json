@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "bin": {
+    "blah": "./common/tny/main.js"
+  },
+  "private": true,
+  "devDependencies": {
+    "aws-sdk": "^2.493.0",
+    "dotenv": "^8.0.0",
+    "lerna": "^3.15.0",
+    "logger": "0.0.1",
+    "s3": "^4.4.0",
+    "semver": "^6.2.0",
+    "webpack": "^4.29.0",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
+  },
+  "scripts": {
+    "init": "lerna bootstrap",
+    "build": "node ./common/scripts/build.js",
+    "blah": "node ./common/webpack/blah.js"
+  }
+}
