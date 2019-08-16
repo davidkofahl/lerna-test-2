@@ -75,6 +75,7 @@ async function main() {
         publishedVersion = data.Body.toString().trim(); 
         console.log('found a VERSION on S3', publishedVersion);
       }
+      console.log('no data: ', data);
     // Object probably doesn't exist yet
     } catch (err) {
       // only care about stories not yet published (missing from S3 bucket)
@@ -83,6 +84,8 @@ async function main() {
         publishedVersion = '0.0.0';
       }
     }
+
+    console.log('have a published version? ', publishedVersion);
     
     // If current build is more recent than published version
     // Accounts for race conditions in multiple simultaneous builds
