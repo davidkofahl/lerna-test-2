@@ -1,8 +1,5 @@
 {
   "name": "root",
-  "bin": {
-    "blah": "./common/tny/main.js"
-  },
   "private": true,
   "devDependencies": {
     "aws-sdk": "^2.493.0",

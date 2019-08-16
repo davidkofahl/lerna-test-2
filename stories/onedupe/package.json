@@ -51,8 +51,6 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@tny/components": "^8.0.0",
-    "@tny/webpack-config": "^10.0.0",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.7.0",
