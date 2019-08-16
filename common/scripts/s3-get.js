@@ -2,19 +2,23 @@ require('dotenv').config();
 const fs = require('fs');
 const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
-const bucketName = process.env.S3_BUCKET;
 
-async function main() {
-  const key = `one-dupe/VERSION`;
+async function* s3Generator(bucketName, keys) {
 
-  const params = {
-    Bucket: bucketName,
-    Key: key,
-  }
+  keys.forEach((key) => {
+    const params = {
+      Bucket: bucketName,
+      Key: key,
+      Body: version,
+    }
 
-  const data = await s3.getObject(params).promise();
+    try {
+      const data = await s3.getObject(params).promise();
+      yield key; 
+    } catch (err) {
+      yield err;
+    }
+  });
+}
 
-  console.log('data', data);
-};
-
-main();
+export.modules = s3Generator;

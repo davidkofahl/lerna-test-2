@@ -6,6 +6,7 @@ const exec = util.promisify(require('child_process').exec);
 const semver = require('semver');
 const AWS = require('aws-sdk');
 const listFiles = require('./list-files');
+const s3Generator = require('./s3-get');
 const s3 = new AWS.S3();
 const bucketName = process.env.S3_BUCKET;
 
@@ -99,7 +100,11 @@ async function main() {
       try {
         await exec(`lerna run --scope ${name} build`);
         const files = listFiles(path.resolve('builds', name));
-        console.log('FILES', files);
+        const requests = s3Generator(bucketName, files);
+
+        for await(const file of requests) {
+          console.log('file written: ', file);
+        }
       } catch (e) {
         console.log(`ERR building story ${name}: ${e}`);
       }
