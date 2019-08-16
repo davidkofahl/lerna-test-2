@@ -4,8 +4,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 
 async function* s3Generator(bucketName, keys) {
-
-  keys.forEach((key) => {
+  for (key of keys) {
     const params = {
       Bucket: bucketName,
       Key: key,
@@ -18,7 +17,7 @@ async function* s3Generator(bucketName, keys) {
     } catch (err) {
       yield err;
     }
-  });
+  }
 }
 
-export.modules = s3Generator;
+module.exports = s3Generator;
