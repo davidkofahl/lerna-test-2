@@ -70,6 +70,7 @@ async function main() {
     let publishedVersion = null;
 
     try {
+      console.log('TRYING');
       const data = await s3.getObject(params).promise();
       if (data && data.Body) {
         publishedVersion = data.Body.toString().trim(); 
