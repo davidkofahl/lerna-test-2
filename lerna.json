@@ -5,6 +5,7 @@
     }
   },
   "packages": [
+    "common/*",
     "stories/*"
   ],
   "version": "independent"

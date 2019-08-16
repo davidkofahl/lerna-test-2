@@ -9,6 +9,8 @@ const s3 = new AWS.S3();
 const bucketName = process.env.S3_BUCKET;
 
 // get all directories inside of common
+
+// @TODO do not bump semver until successful built, need to invert this order
 const ignored = [
   '@tny/scripts',
   '@tny/components',
