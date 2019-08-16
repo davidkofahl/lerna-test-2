@@ -49,5 +49,5 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.2.1"
   },
-  "version": "25.0.0"
+  "version": "26.0.0"
 }
