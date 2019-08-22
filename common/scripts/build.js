@@ -100,7 +100,8 @@ async function main() {
       try {
         await exec(`lerna run --scope ${name} build`);
         const files = listFiles(path.resolve('builds', name));
-        const requests = s3Generator(bucketName, files);
+        console.log('files', files);
+        // const requests = s3Generator(bucketName, files);
 
         for await(const file of requests) {
           console.log('file written: ', file);
