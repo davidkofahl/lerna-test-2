@@ -8,7 +8,8 @@ async function* s3Generator(bucketName, keys) {
     const params = {
       Bucket: bucketName,
       Key: key,
-      Body: version,
+      // Body: version,
+      Body: key,
     }
 
     try {
