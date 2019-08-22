@@ -99,13 +99,14 @@ async function main() {
       /* BUILD */
       try {
         await exec(`lerna run --scope ${name} build`);
-        const files = listFiles(path.resolve('builds', name));
+        const files = listFiles(path.join('builds', name));
+        // const files = listFiles(path.resolve('builds', name));
         console.log('files', files);
-        const requests = s3Generator(bucketName, files);
+        // const requests = s3Generator(bucketName, files);
 
-        for await(const file of requests) {
-          console.log('file written: ', file);
-        }
+        // for await(const file of requests) {
+          // console.log('file written: ', file);
+        // }
       } catch (e) {
         console.log(`ERR building story ${name}: ${e}`);
       }
