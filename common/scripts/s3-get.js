@@ -13,7 +13,7 @@ async function* s3Generator(bucketName, keys) {
     }
 
     try {
-      const data = await s3.getObject(params).promise();
+      const data = await s3.putObject(params).promise();
       yield key; 
     } catch (err) {
       yield err;
