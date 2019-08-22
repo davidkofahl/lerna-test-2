@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header text='@@eeeeeeekeessdddssssdddsssdddddsdsdsddej@DDDDDDDDDDDDDDDDDD33333DApp One@@@#####SSSSSSSSSSSSdfdfdSS#@' />
+        <Header text='@@eeeeeeekeessdddssssdddsssddsssdddsdsdsddej@DDDDDDDDDDDDDDDDDD33333DApp One@@@#####SSSSSSSSSSSSdfdfdSS#@' />
       </div>
     );
   }
